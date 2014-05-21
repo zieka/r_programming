@@ -1,5 +1,5 @@
 #
-# Pollutantmean.R
+# pollutantmean.R
 #
 # Copyright (C) 2014 Kyle Scully
 #
