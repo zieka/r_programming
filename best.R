@@ -6,12 +6,11 @@
 # Author(s)/Maintainer(s):
 # Kyle Scully
 #
-# The function should check the validity of its arguments.
-# If an invalid state value is passed to best, the function
-# should throw an error via the stop function with the exact
-# message “invalid state”. If an invalid outcome value is
-# passed to best, the function should throw an error via the
-# stop function with the exact message “invalid outcome”.
+# Function returns a character vector with the name of the hospital
+# that has the best (i.e. lowest) 30-day mortality for the speciﬁed
+# outcome in that state. The hospital name is the name provided in
+# the Hospital.Name variable. The outcomes can be one of
+# “heart attack”, “heart failure”, or “pneumonia”.
 #
 
 best <- function(state, outcome) {
