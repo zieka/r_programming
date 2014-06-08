@@ -39,16 +39,26 @@
 # 	23 .$750000 - $999999
 # 	24 .$1000000+
 
+
+#Download file if it doesnt already exist in working directory
 if (!file.exists("./american_community_survey.csv")){
   download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="./american_community_survey.csv", method="curl")
 }
+
 property_value_frequency <- function(threshold_value){
+
+  #Verify threshold_value is in range
   if ( threshold_value < 1 | threshold_value > 24){
     stop("threshold value is out of range (1-24)")
   }
 
-  data <- read.csv("./american_community_survey.csv", header=T)
+
+	data <- read.csv("./american_community_survey.csv", header=T)
+
+  #subset data and build as a data frame
   property_value <- data[,"VAL"]
   df <- as.data.frame(table(property_value))
+
+  #return frequency value
   df[df$property_value==threshold_value, "Freq"]
 }
