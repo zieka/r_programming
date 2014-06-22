@@ -41,8 +41,8 @@
 
 
 #Download file if it doesnt already exist in working directory
-if (!file.exists("./american_community_survey.csv")){
-  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="./american_community_survey.csv", method="curl")
+if (!file.exists("./data/american_community_survey.csv")){
+  download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv", destfile="./data/american_community_survey.csv", method="curl")
 }
 
 property_value_frequency <- function(threshold_value){
@@ -53,7 +53,7 @@ property_value_frequency <- function(threshold_value){
   }
 
 
-	data <- read.csv("./american_community_survey.csv", header=T)
+	data <- read.csv("./data/american_community_survey.csv", header=T)
 
   #subset data and build as a data frame
   property_value <- data[,"VAL"]
